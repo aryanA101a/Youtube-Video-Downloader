@@ -8,6 +8,7 @@ Just a Classic YouTube Video Downloader made with Python and Tkinter.
 1. Extract the repo onto your desired path.
 1. Open Terminal.
 ```
+sudo apt-get install python3
 sudo apt-get install python3-tk
 ```
 1. Now go to this directory  *aryanfluxion/Youtube-Video-Downloader* on your file manager.
