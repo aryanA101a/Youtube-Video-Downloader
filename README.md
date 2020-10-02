@@ -5,8 +5,12 @@ Just a Classic YouTube Video Downloader made with Python and Tkinter.
 
 ![Appwrite Playground](preview.png)
 
-# Installation
-## Ubuntu
+# How to run?
+
+## Executable File
+Just run the YT Video Downloader file.
+
+## Command Line Way
 1. Download the repo.
 1. Extract the repo onto your desired path.
 1. Open Terminal.
