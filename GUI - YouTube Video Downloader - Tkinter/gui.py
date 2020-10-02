@@ -1,6 +1,6 @@
 from tkinter import filedialog,messagebox
 from tkinter import *
-from main import downloadLogic
+from downloadLogic import downloadLogic
 from tkinter.ttk import *
 bluegrey='#192734'
 
