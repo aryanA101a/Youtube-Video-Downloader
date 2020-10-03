@@ -6,6 +6,12 @@ Just a Classic YouTube Video Downloader made with Python and Tkinter.
 ![Appwrite Playground](preview.png)
 
 # How to run?
+## Prereqisites
+* Open Terminal.
+```
+sudo apt-get install python3
+sudo apt-get install python3-tk
+```
 
 ## Executable File
 Just run the YT Video Downloader file.
