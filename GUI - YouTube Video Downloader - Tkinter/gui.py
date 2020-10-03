@@ -44,6 +44,12 @@ lbl2 = Label(window, text="FileSize:",background=bluegrey,foreground='White')
 
 lbl2.place(relx =.03,rely=.5, anchor = NW) 
 
+variable = StringVar(window)
+
+file_size_value = OptionMenu(window, variable, "----Select----", "1080p", "720p", "480p", "360p", "240p")
+file_size_value.pack()
+file_size_value.place(relx =.3,rely=.5, anchor = N)
+
 # lbl3 = Label(window, text="Status: ",background=bluegrey,foreground='White')
 
 # lbl3.place(relx =.38,rely=.5, anchor = N) 
@@ -64,11 +70,16 @@ def pathHolder():
     path = txt1.get()
     return path
 
+def fileSizeValue():
+    fileSize = variable.get()
+    return fileSize
+
 def clicked():
     
     url = txt.get()
     path=pathHolder()
-    FileSize=downloadLogic(url,path)
+    fileSize = fileSizeValue()
+    FileSize=downloadLogic(url,path, fileSize)
     lbl2.configure(text='FileSize: '+FileSize)
     messagebox.showinfo('Downloaded!', 'Video has been saved to '+path)
     
