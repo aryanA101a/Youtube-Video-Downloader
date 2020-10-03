@@ -1,7 +1,7 @@
 from pytube import *
 vid=''
 
-def downloadLogic(url,path):
+def download_video(url,path):
 # Inputs the URL
     video_url = url
 

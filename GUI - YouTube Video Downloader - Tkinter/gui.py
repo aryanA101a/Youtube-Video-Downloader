@@ -1,6 +1,7 @@
 from tkinter import filedialog,messagebox
 from tkinter import *
-from downloadLogic import downloadLogic
+from download_video import download_video
+from download_audio import download_audio
 from tkinter.ttk import *
 bluegrey='#192734'
 
@@ -9,7 +10,7 @@ window = Tk()
 
 window.title("Youtube Video Downloader")
 
-window.geometry('500x200')
+window.geometry('500x250')
 window.configure(bg=bluegrey)
 
 #Create style object
@@ -64,23 +65,29 @@ def pathHolder():
     path = txt1.get()
     return path
 
-def clicked():
-    
+def dl_video_click():
     url = txt.get()
     path=pathHolder()
-    FileSize=downloadLogic(url,path)
+    FileSize=download_video(url,path)
     lbl2.configure(text='FileSize: '+FileSize)
     messagebox.showinfo('Downloaded!', 'Video has been saved to '+path)
+
+def dl_audio_click():
+    url = txt.get()
+    path=pathHolder()
+    FileSize=download_audio(url,path)
+    messagebox.showinfo('Downloaded!', 'Audio has been saved to '+path)
     
 
 
-btn = Button(window, text="Download",style='W.TButton',command=clicked,width=20)
+btn_download_video = Button(window, text="Download Video",style='W.TButton',command=dl_video_click,width=20)
+btn_download_video.place(relx =.5,rely=.7, anchor = CENTER) 
 
-btn.place(relx =.5,rely=.8, anchor = CENTER) 
+btn_download_audio = Button(window, text="Download Audio",style='W.TButton',command=dl_audio_click,width=20)
+btn_download_audio.place(relx =.5,rely=.9, anchor = CENTER) 
 
-btn1 = Button(window, text="Browse",style='W.TButton', command=pathAssignment)
-
-btn1.place(relx =.95,rely=.3, anchor = NE) 
+btn_set_directory = Button(window, text="Browse",style='W.TButton', command=pathAssignment)
+btn_set_directory.place(relx =.95,rely=.3, anchor = NE) 
 
 window.resizable(0,0)
 window.mainloop()
