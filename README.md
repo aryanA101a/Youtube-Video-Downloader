@@ -14,7 +14,7 @@ sudo apt-get install python3-tk
 ```
 
 ## Executable File
-Just run the YT Video Downloader file.
+Just run the gui file.
 
 ## Command Line Way
 1. Download the repo.
