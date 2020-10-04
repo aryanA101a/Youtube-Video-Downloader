@@ -28,6 +28,6 @@ sudo apt-get install python3-tk
 1. Right-Mouse-Click on the file manager.
 1. Click on Open in Terminal.
 ```
-python3 "path/GUI.py"
+python3 gui.py
 ```
 
