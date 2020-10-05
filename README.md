@@ -24,7 +24,7 @@ Just run the gui file.
 sudo apt-get install python3
 sudo apt-get install python3-tk
 ```
-1. Now go to this directory  *aryanfluxion/Youtube-Video-Downloader* on your file manager.
+1. Now go to this directory  *aryanA101a/Youtube-Video-Downloader* on your file manager.
 1. Right-Mouse-Click on the file manager.
 1. Click on Open in Terminal.
 ```
