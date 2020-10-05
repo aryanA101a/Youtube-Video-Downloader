@@ -3,6 +3,7 @@ from tkinter import *
 from download_video import download_video
 from download_audio import download_audio
 from tkinter.ttk import *
+from threading import Thread
 bluegrey='#192734'
 
 
@@ -45,11 +46,14 @@ lbl2 = Label(window, text="FileSize:",background=bluegrey,foreground='White')
 
 lbl2.place(relx =.03,rely=.5, anchor = NW) 
 
-# lbl3 = Label(window, text="Status: ",background=bluegrey,foreground='White')
+lbl3 = Label(window, text="Status: ",background=bluegrey,foreground='White')
 
-# lbl3.place(relx =.38,rely=.5, anchor = N) 
+lbl3.place(relx =.38,rely=.5, anchor = N) 
 
+progress = IntVar()
+progress_bar = Progressbar(maximum=100, variable=progress)
 
+progress_bar.place(relx =.45,rely=.5, anchor = NW, width=250) 
 
 def pathAssignment():
     root = Tk()
@@ -65,25 +69,31 @@ def pathHolder():
     path = txt1.get()
     return path
 
+def download_video_button_clicked():
+    Thread(target=dl_video_click).start()
+
 def dl_video_click():
     url = txt.get()
     path=pathHolder()
-    FileSize=download_video(url,path)
+    FileSize=download_video(url,path,progress)
     lbl2.configure(text='FileSize: '+FileSize)
     messagebox.showinfo('Downloaded!', 'Video has been saved to '+path)
+
+def download_audio_button_clicked():
+    Thread(target=dl_audio_click).start()
 
 def dl_audio_click():
     url = txt.get()
     path=pathHolder()
-    FileSize=download_audio(url,path)
+    FileSize=download_audio(url,path,progress)
     messagebox.showinfo('Downloaded!', 'Audio has been saved to '+path)
     
 
 
-btn_download_video = Button(window, text="Download Video",style='W.TButton',command=dl_video_click,width=20)
+btn_download_video = Button(window, text="Download Video",style='W.TButton',command=download_video_button_clicked,width=20)
 btn_download_video.place(relx =.5,rely=.7, anchor = CENTER) 
 
-btn_download_audio = Button(window, text="Download Audio",style='W.TButton',command=dl_audio_click,width=20)
+btn_download_audio = Button(window, text="Download Audio",style='W.TButton',command=download_audio_button_clicked,width=20)
 btn_download_audio.place(relx =.5,rely=.9, anchor = CENTER) 
 
 btn_set_directory = Button(window, text="Browse",style='W.TButton', command=pathAssignment)
