@@ -17,9 +17,14 @@ window.configure(bg=bluegrey)
 #Create style object
 sto = Style()
 
-#configure style
+#configure dynamic values for style
+sto.map("W.TButton",
+        foreground=[('pressed', 'white'), ('active', 'white')],
+        background=[('pressed', '!disabled', '#AD3749'), ('active', '#FC536C')])
+
+#configure properties for style
 sto.configure('W.TButton', font= ('Roboto', 10, 'bold'),
-              foreground='White', background='#FF304E', relief=FLAT)
+              foreground='White', background='#FF304E', relief='flat')
 
 
 
