@@ -3,7 +3,7 @@ Just a Classic YouTube Video Downloader made with Python and Tkinter.
 
 > Note: You can only paste YouTube video link by CTRL+V.
 
-![Appwrite Playground](preview.png)
+![Youtube Video Downloader](preview.png)
 
 # How to run?
 ## Prereqisites
