@@ -19,7 +19,7 @@ sto = Style()
 
 #configure style
 sto.configure('W.TButton', font= ('Roboto', 10, 'bold'),
-foreground='White',background='#FF304E')
+              foreground='White', background='#FF304E', relief=FLAT)
 
 
 
